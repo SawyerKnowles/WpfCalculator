@@ -8,7 +8,10 @@
         Title="MainWindow" Height="450" Width="350">
     <Grid Margin="15">
         <Grid.RowDefinitions>
+            <!-- Output -->
             <RowDefinition Height="100"/>
+            
+            <!-- Buttons -->
             <RowDefinition Height="70"/>
             <RowDefinition Height="70"/>
             <RowDefinition Height="70"/>
@@ -16,7 +19,111 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            
+            <ColumnDefinition Width="78"/>
+            <ColumnDefinition Width="78"/>
+            <ColumnDefinition Width="78"/>
+            <ColumnDefinition Width="78"/>
         </Grid.ColumnDefinitions>
+
+        <TextBlock 
+            x:Name="OutputTextBlock"
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Text="Hello World"
+            FontSize="50"
+            TextAlignment="Right"
+            VerticalAlignment="Center"/>
+
+        <Button
+            x:Name="SevenButton"
+            Grid.Row="1"
+            Grid.Column="0"
+            Content="7"
+            FontSize="30"
+            FontWeight="Bold"
+            Click="NumButton_Click"/>
+
+        <Button
+            x:Name="EightButton"
+            Grid.Row="1"
+            Grid.Column="1"
+            Content="8"
+            FontSize="30"
+            FontWeight="Bold"
+            Click="NumButton_Click"/>
+
+        <Button
+            x:Name="NineButton"
+            Grid.Row="1"
+            Grid.Column="2"
+            Content="9"
+            FontSize="30"
+            FontWeight="Bold"
+            Click="NumButton_Click"/>
+
+        <Button
+            x:Name="FourButton"
+            Grid.Row="2"
+            Grid.Column="0"
+            Content="4"
+            FontSize="30"
+            FontWeight="Bold"
+            Click="NumButton_Click"/>
+
+        <Button
+            x:Name="FiveButton"
+            Grid.Row="2"
+            Grid.Column="1"
+            Content="5"
+            FontSize="30"
+            FontWeight="Bold"
+            Click="NumButton_Click"/>
+
+        <Button
+            x:Name="SixButton"
+            Grid.Row="2"
+            Grid.Column="2"
+            Content="6"
+            FontSize="30"
+            FontWeight="Bold"
+            Click="NumButton_Click"/>
+
+        <Button
+            x:Name="OneButton"
+            Grid.Row="3"
+            Grid.Column="0"
+            Content="1"
+            FontSize="30"
+            FontWeight="Bold"
+            Click="NumButton_Click"/>
+        
+        <Button
+            x:Name="TwoButton"
+            Grid.Row="3"
+            Grid.Column="1"
+            Content="2"
+            FontSize="30"
+            FontWeight="Bold"
+            Click="NumButton_Click"/>
+
+        <Button
+            x:Name="ThreeButton"
+            Grid.Row="3"
+            Grid.Column="2"
+            Content="3"
+            FontSize="30"
+            FontWeight="Bold"
+            Click="NumButton_Click"/>
+
+        <Button
+            x:Name="ZeroButton"
+            Grid.Row="4"
+            Grid.Column="1"
+            Content="0"
+            FontSize="30"
+            FontWeight="Bold"
+            Click="NumButton_Click"/>
+
     </Grid>
 </Window>

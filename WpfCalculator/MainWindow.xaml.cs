@@ -24,5 +24,12 @@ namespace WpfCalculator
         {
             InitializeComponent();
         }
+
+        private void NumButton_Click(object sender, RoutedEventArgs e)
+        {
+            string name = ((Button)sender).Name;
+
+            MessageBox.Show(name);
+        }
     }
 }
