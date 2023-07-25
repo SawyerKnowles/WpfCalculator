@@ -5,39 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfCalculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="350">
-    <Grid Margin="15">
+        Title="Super Cool Calculator" Height="450" Width="300">
+    <Grid Margin="10">
         <Grid.RowDefinitions>
+            <!-- Operation Preview -->
+            <RowDefinition Height="0.5*"/>
+            
             <!-- Output -->
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="1.5*"/>
             
             <!-- Buttons -->
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="78"/>
-            <ColumnDefinition Width="78"/>
-            <ColumnDefinition Width="78"/>
-            <ColumnDefinition Width="78"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <TextBlock 
-            x:Name="OutputTextBlock"
+            x:Name="PreviewTextBlock"
             Grid.Row="0"
             Grid.Column="0"
             Grid.ColumnSpan="4"
-            Text="Hello World"
+            Text=""
+            FontWeight="Light"
+            FontStyle="Italic"
+            FontSize="25"
+            TextAlignment="Right"
+            VerticalAlignment="Bottom"/>
+
+        <TextBlock 
+            x:Name="OutputTextBlock"
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Text="{Binding output}"
             FontSize="50"
             TextAlignment="Right"
-            VerticalAlignment="Center"/>
+            VerticalAlignment="Bottom"/>
 
         <Button
             x:Name="SevenButton"
-            Grid.Row="1"
+            Grid.Row="3"
             Grid.Column="0"
             Content="7"
             FontSize="30"
@@ -46,7 +61,7 @@
 
         <Button
             x:Name="EightButton"
-            Grid.Row="1"
+            Grid.Row="3"
             Grid.Column="1"
             Content="8"
             FontSize="30"
@@ -55,7 +70,7 @@
 
         <Button
             x:Name="NineButton"
-            Grid.Row="1"
+            Grid.Row="3"
             Grid.Column="2"
             Content="9"
             FontSize="30"
@@ -64,7 +79,7 @@
 
         <Button
             x:Name="FourButton"
-            Grid.Row="2"
+            Grid.Row="4"
             Grid.Column="0"
             Content="4"
             FontSize="30"
@@ -73,7 +88,7 @@
 
         <Button
             x:Name="FiveButton"
-            Grid.Row="2"
+            Grid.Row="4"
             Grid.Column="1"
             Content="5"
             FontSize="30"
@@ -82,7 +97,7 @@
 
         <Button
             x:Name="SixButton"
-            Grid.Row="2"
+            Grid.Row="4"
             Grid.Column="2"
             Content="6"
             FontSize="30"
@@ -91,7 +106,7 @@
 
         <Button
             x:Name="OneButton"
-            Grid.Row="3"
+            Grid.Row="5"
             Grid.Column="0"
             Content="1"
             FontSize="30"
@@ -100,7 +115,7 @@
         
         <Button
             x:Name="TwoButton"
-            Grid.Row="3"
+            Grid.Row="5"
             Grid.Column="1"
             Content="2"
             FontSize="30"
@@ -109,7 +124,7 @@
 
         <Button
             x:Name="ThreeButton"
-            Grid.Row="3"
+            Grid.Row="5"
             Grid.Column="2"
             Content="3"
             FontSize="30"
@@ -118,12 +133,103 @@
 
         <Button
             x:Name="ZeroButton"
-            Grid.Row="4"
+            Grid.Row="6"
             Grid.Column="1"
             Content="0"
             FontSize="30"
             FontWeight="Bold"
             Click="NumButton_Click"/>
+
+        <Button
+            x:Name="DecimalButton"
+            Grid.Row="6"
+            Grid.Column="2"
+            Content="."
+            FontSize="30"
+            FontWeight="Bold"
+            Click="NumButton_Click"/>
+
+        <Button
+            x:Name="NegativeButton"
+            Grid.Row="6"
+            Grid.Column="0"
+            Content="+/-"
+            FontSize="30"
+            FontWeight="Bold"
+            Click="NegativeButton_Click"/>
+
+        <!-- Operators -->
+        <Button
+            x:Name="DivideButton"
+            Grid.Row="2"
+            Grid.Column="3"
+            Content=""
+            FontSize="30"
+            FontWeight="Bold"
+            Click="OperatorButton_Click"/>
+
+        <Button
+            x:Name="MultiplyButton"
+            Grid.Row="3"
+            Grid.Column="3"
+            Content="x"
+            FontSize="30"
+            FontWeight="Bold"
+            Click="OperatorButton_Click"/>
+
+        <Button
+            x:Name="MinusButton"
+            Grid.Row="4"
+            Grid.Column="3"
+            Content="-"
+            FontSize="30"
+            FontWeight="Bold"
+            Click="OperatorButton_Click"/>
+
+        <Button
+            x:Name="AddButton"
+            Grid.Row="5"
+            Grid.Column="3"
+            Content="+"
+            FontSize="30"
+            FontWeight="Bold"
+            Click="OperatorButton_Click"/>
+
+        <Button
+            x:Name="EqualsButton"
+            Grid.Row="6"
+            Grid.Column="3"
+            Content="="
+            FontSize="30"
+            FontWeight="Bold"
+            Click="EqualsButton_Click"/>
+
+        <Button
+            x:Name="PowButton"
+            Grid.Row="2"
+            Grid.Column="1"
+            Content="^"
+            FontSize="30"
+            FontWeight="Bold"
+            Click="OperatorButton_Click"/>
+
+        <Button
+            x:Name="SqrtButton"
+            Grid.Row="2"
+            Grid.Column="2"
+            Content=""
+            FontSize="30"
+            FontWeight="Bold"
+            Click="SqrtButton_Click"/>
+
+        <Button
+            x:Name="ClearButton"
+            Grid.Row="2"
+            Grid.Column="0"
+            Content="c"
+            FontSize="30"
+            FontWeight="Bold"
+            Click="ClearButton_Click"/>
 
     </Grid>
 </Window>
